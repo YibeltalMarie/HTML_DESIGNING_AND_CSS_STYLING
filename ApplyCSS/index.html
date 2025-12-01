@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Website - CSS Methods</title>
+    
+    <!-- Linking External CSS File -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Internal CSS (inside <style> tag) -->
+    <style>
+        /* Internal CSS - targets all paragraphs with class="internal-style" */
+        p.internal-style {
+            color: #2c3e50;
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            font-size: 16px;
+            line-height: 1.6;
+            border-radius: 0 5px 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Company</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Our Approach to Styling</h2>
+            
+            <!-- Paragraph with Inline CSS -->
+            <p style="color: #e74c3c; font-weight: bold; background-color: #fdebd0; 
+                      padding: 12px; border: 2px dashed #e67e22; border-radius: 5px;">
+                This paragraph is styled using <strong>Inline CSS</strong>. The styles are applied 
+                directly to this element using the <code>style</code> attribute. This method has 
+                the highest specificity but is not recommended for maintainable code.
+            </p>
+            
+            <!-- Paragraph with Internal CSS -->
+            <p class="internal-style">
+                This paragraph is styled using <strong>Internal CSS</strong>. The styles are 
+                defined in the <code>&lt;style&gt;</code> tag within the <code>&lt;head&gt;</code> 
+                section of this document. This method is useful for single-page styles.
+            </p>
+            
+            <!-- Div styled with External CSS -->
+            <div class="external-style">
+                <h3>External CSS Example</h3>
+                <p>This <code>&lt;div&gt;</code> is styled using <strong>External CSS</strong> 
+                   from the linked "styles.css" file. The background color of the entire page 
+                   is also controlled by the external stylesheet.</p>
+                <p>This approach promotes reusability and separation of concerns, making 
+                   the codebase more maintainable.</p>
+            </div>
+            
+            <!-- Another div to demonstrate class selector reuse -->
+            <div class="info-box">
+                <h3>CSS Methods Comparison</h3>
+                <ul>
+                    <li><strong>Inline CSS:</strong> Highest specificity, hardest to maintain</li>
+                    <li><strong>Internal CSS:</strong> Page-specific, medium maintainability</li>
+                    <li><strong>External CSS:</strong> Best practice, promotes reusability</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 Company Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>

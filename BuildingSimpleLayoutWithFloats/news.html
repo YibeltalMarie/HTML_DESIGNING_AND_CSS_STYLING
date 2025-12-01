@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Old-School News Website - Float Layout</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic page styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .date {
+            font-size: 14px;
+            color: #bdc3c7;
+            font-style: italic;
+        }
+        
+        .article-meta {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        
+        footer {
+            background-color: #34495e;
+            color: white;
+            padding: 30px;
+            margin-top: 40px;
+            border-radius: 5px;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>The Daily Chronicle</h1>
+        <p class="date">Tuesday, March 15, 2024 | Vol. 127, No. 45</p>
+    </header>
+    
+    <!-- Main content area with two columns -->
+    <div class="content-wrapper">
+        <!-- Sidebar - floated left -->
+        <div class="sidebar">
+            <h2>Latest Headlines</h2>
+            <ul>
+                <li><a href="#">Local Election Results Are In</a></li>
+                <li><a href="#">New Park Opening Downtown</a></li>
+                <li><a href="#">School Board Approves Budget</a></li>
+                <li><a href="#">Weather: Sunny Week Ahead</a></li>
+                <li><a href="#">Sports: Tigers Win Championship</a></li>
+            </ul>
+            
+            <h2>Popular Stories</h2>
+            <ul>
+                <li><a href="#">Historic Building Restoration Complete</a></li>
+                <li><a href="#">Interview with Mayor Thompson</a></li>
+                <li><a href="#">New Library Hours Announced</a></li>
+            </ul>
+            
+            <h2>Advertisement</h2>
+            <div class="ad">
+                <p><strong>Joe's Diner</strong><br>
+                Best breakfast in town!<br>
+                Open 6AM-2PM Daily</p>
+            </div>
+        </div>
+        
+        <!-- Main content - floated right -->
+        <div class="main-content">
+            <article>
+                <h2>City Council Approves New Infrastructure Plan</h2>
+                <p class="article-meta">By Jennifer Wilson | Local Politics Reporter | 3:45 PM</p>
+                
+                <p>The City Council voted 7-2 yesterday to approve a comprehensive $50 million infrastructure plan that will improve roads, bridges, and public transportation across the metropolitan area. The plan, which has been in development for over two years, represents the largest public works investment in the city's history.</p>
+                
+                <p>Mayor Thompson praised the council's decision, stating, "This is a historic moment for our city. These improvements will create jobs, stimulate economic growth, and make our community safer and more accessible for all residents."</p>
+                
+                <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=876&q=80" alt="City infrastructure" class="article-image">
+                
+                <p>The infrastructure plan includes several key components:</p>
+                
+                <ul>
+                    <li>Resurfacing of 50 miles of city roads</li>
+                    <li>Repair and reinforcement of three major bridges</li>
+                    <li>Expansion of bike lanes and pedestrian pathways</li>
+                    <li>Upgrades to public transportation systems</li>
+                    <li>Installation of energy-efficient street lighting</li>
+                </ul>
+                
+                <p>Construction is scheduled to begin in early spring and will be completed in phases over the next three years. City officials estimate the project will create approximately 500 new jobs in the construction sector.</p>
+                
+                <p>Council Member Rodriguez, who voted against the plan, expressed concerns about the financial burden on taxpayers. "While I support infrastructure improvements, I believe this plan moves too quickly and doesn't adequately consider the long-term financial impact on our residents," Rodriguez stated during the council meeting.</p>
+                
+                <p>Despite these concerns, the majority of council members emphasized the urgent need for infrastructure repairs. "We've been putting band-aids on these problems for too long," said Council President Miller. "This comprehensive plan addresses our most critical needs and sets our city up for future growth and prosperity."</p>
+                
+                <p>The funding for the project will come from a combination of federal grants, state assistance, and municipal bonds. Property taxes are expected to increase by an average of 2% to help cover the costs.</p>
+                
+                <p>Public hearings on specific project details will be held throughout the month. Residents are encouraged to attend and provide input on the implementation timeline and specific neighborhood improvements.</p>
+            </article>
+        </div>
+        
+        <!-- Clear fix - this prevents layout issues -->
+        <div class="clearfix"></div>
+    </div>
+    
+    <!-- Footer - will clear both floats -->
+    <footer>
+        <div class="footer-content">
+            <h2>The Daily Chronicle</h2>
+            <p>123 Main Street | Anytown, USA 12345</p>
+            <p>Phone: (555) 123-4567 | Email: info@dailychronicle.com</p>
+            <p>&copy; 2024 The Daily Chronicle. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

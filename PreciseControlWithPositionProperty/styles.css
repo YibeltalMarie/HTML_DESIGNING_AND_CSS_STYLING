@@ -1,0 +1,181 @@
+/* styles.css - Position Property Examples */
+
+/* ============================================
+   FIXED NAVIGATION BAR
+   ============================================ */
+
+.fixed-nav {
+    position: fixed;          /* Fixed position stays in place */
+    top: 0;                   /* Position at top of viewport */
+    left: 0;                  /* Position at left edge */
+    width: 100%;              /* Full width of viewport */
+    background-color: #2c3e50; /* Dark blue background */
+    color: white;             /* White text */
+    padding: 15px 0;          /* Vertical padding */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    z-index: 1000;            /* Ensure it stays on top of other elements */
+}
+
+.nav-container {
+    max-width: 1200px;        /* Limit width */
+    margin: 0 auto;           /* Center horizontally */
+    padding: 0 20px;          /* Side padding */
+    display: flex;            /* Flexbox for layout */
+    justify-content: space-between; /* Space between logo and menu */
+    align-items: center;      /* Center vertically */
+}
+
+.logo {
+    font-size: 24px;          /* Logo size */
+    font-weight: bold;        /* Bold text */
+    color: white;             /* White color */
+    text-decoration: none;    /* Remove underline */
+}
+
+.nav-menu {
+    list-style-type: none;    /* Remove bullets */
+    display: flex;            /* Horizontal menu */
+    gap: 30px;                /* Space between menu items */
+}
+
+.nav-menu li {
+    display: inline-block;    /* Inline items */
+}
+
+.nav-menu a {
+    color: white;             /* White text */
+    text-decoration: none;    /* Remove underline */
+    font-size: 16px;          /* Menu text size */
+    padding: 8px 12px;        /* Clickable area */
+    border-radius: 4px;       /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+.nav-menu a:hover {
+    background-color: #3498db; /* Blue background on hover */
+}
+
+/* ============================================
+   STICKY HEADER
+   ============================================ */
+
+.sticky-header {
+    position: sticky;         /* Sticky positioning */
+    top: 60px;                /* Stick 60px from top (below fixed nav) */
+    background-color: #7f8c8d; /* Gray background */
+    color: white;             /* White text */
+    padding: 20px;            /* Padding inside */
+    text-align: center;       /* Center text */
+    z-index: 500;             /* Below fixed nav but above content */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 60px;         /* Space for fixed navigation */
+}
+
+.sticky-content {
+    max-width: 1200px;        /* Limit width */
+    margin: 0 auto;           /* Center horizontally */
+}
+
+.sticky-header h2 {
+    margin-bottom: 10px;      /* Space below heading */
+    font-size: 22px;          /* Heading size */
+}
+
+.sticky-header p {
+    font-size: 16px;          /* Paragraph size */
+    opacity: 0.9;             /* Slight transparency */
+}
+
+/* ============================================
+   BACK TO TOP BUTTON
+   ============================================ */
+
+.back-to-top {
+    position: fixed;          /* Fixed position */
+    bottom: 20px;             /* 20px from bottom */
+    right: 20px;              /* 20px from right */
+    background-color: #3498db; /* Blue background */
+    color: white;             /* White text */
+    border: none;             /* Remove border */
+    padding: 15px 25px;       /* Button padding */
+    font-size: 16px;          /* Text size */
+    border-radius: 30px;      /* Rounded button */
+    cursor: pointer;          /* Pointer cursor on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    z-index: 1000;            /* Ensure it stays on top */
+    transition: all 0.3s ease; /* Smooth transitions */
+}
+
+.back-to-top:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    background-color: #2c3e50; /* Dark background */
+    color: white;             /* White text */
+    padding: 30px 0;          /* Vertical padding */
+    margin-top: 50px;         /* Space above footer */
+    text-align: center;       /* Center text */
+}
+
+footer p {
+    margin: 0;                /* Remove margin */
+    font-size: 14px;          /* Footer text size */
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet screens */
+@media (max-width: 768px) {
+    .nav-menu {
+        gap: 15px;            /* Less space between menu items */
+    }
+    
+    .nav-menu a {
+        font-size: 14px;      /* Smaller menu text */
+        padding: 6px 10px;    /* Smaller clickable area */
+    }
+    
+    .sticky-header {
+        top: 55px;            /* Adjust sticky position */
+        padding: 15px;        /* Less padding */
+    }
+    
+    .back-to-top {
+        padding: 12px 20px;   /* Smaller button */
+        font-size: 14px;      /* Smaller text */
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+    .nav-container {
+        flex-direction: column; /* Stack logo and menu */
+        gap: 10px;             /* Space between stacked items */
+    }
+    
+    .nav-menu {
+        gap: 10px;            /* Even less space */
+        flex-wrap: wrap;      /* Allow menu to wrap */
+        justify-content: center; /* Center menu items */
+    }
+    
+    .sticky-header {
+        top: 90px;            /* Adjust for stacked nav */
+        margin-top: 90px;     /* Adjust for stacked nav */
+    }
+    
+    .back-to-top {
+        bottom: 15px;         /* Slightly closer to edge */
+        right: 15px;          /* Slightly closer to edge */
+        padding: 10px 15px;   /* Even smaller button */
+    }
+}

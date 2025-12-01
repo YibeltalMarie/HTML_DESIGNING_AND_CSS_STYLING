@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Profile Cards - Box Model</title>
+    <!-- Linking External CSS File -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional internal styles for the page */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .team-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .team-title {
+            width: 100%;
+            text-align: center;
+            color: #3498db;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Leadership Team</h1>
+        <p class="subtitle">Each profile card below demonstrates the CSS Box Model in action with consistent spacing and clean borders.</p>
+    </header>
+    
+    <main>
+        <h2 class="team-title">Executive Team</h2>
+        <section class="team-section">
+            <!-- Profile Card 1 -->
+            <div class="profile-card">
+                <div class="profile-img">
+                    <img src="https://via.placeholder.com/150" alt="Sarah Johnson">
+                </div>
+                <div class="profile-content">
+                    <h3>Sarah Johnson</h3>
+                    <p class="title">Chief Executive Officer</p>
+                    <p class="description">Leads company strategy and vision with 15+ years of industry experience.</p>
+                    <div class="contact-info">
+                        <p>📧 sarah@company.com</p>
+                        <p>📱 (555) 123-4567</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Profile Card 2 -->
+            <div class="profile-card">
+                <div class="profile-img">
+                    <img src="https://via.placeholder.com/150" alt="Michael Chen">
+                </div>
+                <div class="profile-content">
+                    <h3>Michael Chen</h3>
+                    <p class="title">Chief Technology Officer</p>
+                    <p class="description">Oversees all technical operations and product development.</p>
+                    <div class="contact-info">
+                        <p>📧 michael@company.com</p>
+                        <p>📱 (555) 987-6543</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Profile Card 3 -->
+            <div class="profile-card">
+                <div class="profile-img">
+                    <img src="https://via.placeholder.com/150" alt="Jessica Williams">
+                </div>
+                <div class="profile-content">
+                    <h3>Jessica Williams</h3>
+                    <p class="title">Chief Marketing Officer</p>
+                    <p class="description">Drives brand strategy and global marketing initiatives.</p>
+                    <div class="contact-info">
+                        <p>📧 jessica@company.com</p>
+                        <p>📱 (555) 456-7890</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <h2 class="team-title">Development Team</h2>
+        <section class="team-section">
+            <!-- Profile Card 4 - Demonstrating different box-sizing -->
+            <div class="profile-card alternate">
+                <div class="profile-img">
+                    <img src="https://via.placeholder.com/150" alt="David Kim">
+                </div>
+                <div class="profile-content">
+                    <h3>David Kim</h3>
+                    <p class="title">Lead Software Engineer</p>
+                    <p class="description">Specializes in front-end development and user experience design.</p>
+                    <div class="stats">
+                        <span>Projects: 42</span>
+                        <span>Years: 8</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Profile Card 5 -->
+            <div class="profile-card alternate">
+                <div class="profile-img">
+                    <img src="https://via.placeholder.com/150" alt="Maria Garcia">
+                </div>
+                <div class="profile-content">
+                    <h3>Maria Garcia</h3>
+                    <p class="title">DevOps Engineer</p>
+                    <p class="description">Manages cloud infrastructure and deployment pipelines.</p>
+                    <div class="stats">
+                        <span>Systems: 18</span>
+                        <span>Years: 6</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Box Model Visualization -->
+        <section class="visualization">
+            <h2>Box Model Visualization</h2>
+            <div class="box-model-demo">
+                <div class="margin">
+                    Margin
+                    <div class="border">
+                        Border
+                        <div class="padding">
+                            Padding
+                            <div class="content">
+                                Content Area<br>
+                                (width × height)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="color-box margin-color"></div>
+                    <span>Margin (space outside)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box border-color"></div>
+                    <span>Border (around padding)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box padding-color"></div>
+                    <span>Padding (space inside)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="color-box content-color"></div>
+                    <span>Content (width × height)</span>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2023 Company Team Profiles. Demonstrating CSS Box Model principles.</p>
+    </footer>
+</body>
+</html>

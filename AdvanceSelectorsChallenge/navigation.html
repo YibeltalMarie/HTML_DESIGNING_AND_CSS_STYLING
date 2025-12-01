@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS Selectors - Navigation Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional page styling for demonstration */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(to right, #2c3e50, #4a6491);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+        
+        .demo-section {
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .demo-section h2 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            font-size: 1.8rem;
+        }
+        
+        .selector-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f4fc;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .selector-info h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+            font-size: 0.95rem;
+        }
+        
+        .visual-guide {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .guide-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .color-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #2c3e50;
+            color: white;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 900px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Advanced CSS Selectors</h1>
+            <p class="subtitle">Mastering complex navigation styling with precise selector targeting</p>
+        </header>
+        
+        <div class="content">
+            <section class="demo-section">
+                <h2>Main Navigation Menu</h2>
+                
+                <!-- Primary Navigation (Direct Children) -->
+                <nav class="main-nav" id="primary-nav">
+                    <ul class="menu">
+                        <li><a href="#home" class="nav-link" data-page="home">Home</a></li>
+                        <li><a href="#about" class="nav-link" data-page="about">About Us</a></li>
+                        <li><a href="#services" class="nav-link" data-page="services">Services</a>
+                            <ul class="submenu">
+                                <li><a href="#web-dev" class="nav-link sub-link">Web Development</a></li>
+                                <li><a href="#mobile-dev" class="nav-link sub-link">Mobile Apps</a></li>
+                                <li><a href="#consulting" class="nav-link sub-link">Consulting</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#portfolio" class="nav-link" data-page="portfolio">Portfolio</a></li>
+                        <li><a href="#contact" class="nav-link" data-page="contact" aria-current="page">Contact Us</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Secondary Navigation (Different Structure) -->
+                <h3 style="margin-top: 40px; color: #2c3e50;">Secondary Navigation</h3>
+                <nav class="secondary-nav">
+                    <div class="nav-group">
+                        <a href="#login" class="btn-nav">Login</a>
+                        <a href="#signup" class="btn-nav">Sign Up</a>
+                        <a href="#help" class="btn-nav" data-help="true">Help Center</a>
+                    </div>
+                </nav>
+                
+                <!-- Page Controls -->
+                <h3 style="margin-top: 40px; color: #2c3e50;">Page Controls</h3>
+                <div class="controls">
+                    <a href="#page1" class="page-link" data-active="true">Page 1 (Active)</a>
+                    <a href="#page2" class="page-link">Page 2</a>
+                    <a href="#page3" class="page-link">Page 3</a>
+                    <a href="#page4" class="page-link" target="_blank">External Page</a>
+                </div>
+                
+                <div class="selector-info">
+                    <h3>Active Selectors Demonstration</h3>
+                    <p>This menu demonstrates all the required selectors:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li><strong>first-child</strong>: First item is bold</li>
+                        <li><strong>:hover</strong>: Links change color on hover</li>
+                        <li><strong>Attribute selector</strong>: Active page has different background</li>
+                        <li><strong>Child selector (>)</strong>: Direct children of nav have borders</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="demo-section">
+                <h2>Selector Concepts Explained</h2>
+                
+                <div class="visual-guide">
+                    <div class="guide-item">
+                        <div class="color-indicator" style="background-color: #e74c3c;"></div>
+                        <div>
+                            <strong>Child Selector (nav > ul)</strong>
+                            <p>Selects only direct children. Notice borders on main menu items only, not submenu items.</p>
+                            <div class="code-block">nav > ul > li { border: 2px solid #e74c3c; }</div>
+                        </div>
+                    </div>
+                    
+                    <div class="guide-item">
+                        <div class="color-indicator" style="background-color: #3498db;"></div>
+                        <div>
+                            <strong>first-child Pseudo-class</strong>
+                            <p>Selects the first child element. The "Home" link is bold.</p>
+                            <div class="code-block">.menu > li:first-child { font-weight: bold; }</div>
+                        </div>
+                    </div>
+                    
+                    <div class="guide-item">
+                        <div class="color-indicator" style="background-color: #2ecc71;"></div>
+                        <div>
+                            <strong>:hover Pseudo-class</strong>
+                            <p>Applied when user hovers over an element. Try hovering over menu items!</p>
+                            <div class="code-block">.nav-link:hover { color: #2ecc71; }</div>
+                        </div>
+                    </div>
+                    
+                    <div class="guide-item">
+                        <div class="color-indicator" style="background-color: #f39c12;"></div>
+                        <div>
+                            <strong>Attribute Selectors</strong>
+                            <p>Selects elements based on attributes. Active page (Contact Us) has orange background.</p>
+                            <div class="code-block">a[aria-current="page"] { background-color: #f39c12; }</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="selector-info">
+                    <h3>Try This Experiment</h3>
+                    <p>Hover over different menu items to see hover effects. Notice:</p>
+                    <ol style="margin-left: 20px; margin-top: 10px;">
+                        <li>Only direct children of nav have borders (not submenu items)</li>
+                        <li>First item ("Home") is bold</li>
+                        <li>"Contact Us" has different background (it's the active page)</li>
+                        <li>All links change color on hover</li>
+                    </ol>
+                </div>
+                
+                <h3 style="margin-top: 30px; color: #2c3e50;">Additional Selector Examples</h3>
+                <div class="code-block">
+/* Attribute contains selector */
+a[href*="#page"] { color: purple; }
+
+/* Attribute starts with selector */
+a[href^="#"] { text-decoration: none; }
+
+/* Attribute ends with selector */
+a[href$="dev"] { font-style: italic; }
+
+/* Multiple attribute selector */
+a[data-page][href] { padding: 5px 10px; }
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>Advanced CSS Selectors Challenge | Demonstrating Child, Pseudo-class, and Attribute Selectors</p>
+        </footer>
+    </div>
+</body>
+</html>

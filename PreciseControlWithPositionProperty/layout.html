@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Property Examples</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic page styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin: 25px 0 15px;
+            color: #34495e;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .demo-box {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .position-example {
+            width: 200px;
+            height: 100px;
+            padding: 15px;
+            border: 2px solid;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Navigation Bar - always visible -->
+    <nav class="fixed-nav">
+        <div class="nav-container">
+            <div class="logo">MyWebsite</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Sticky Header - becomes fixed after scrolling -->
+    <header class="sticky-header">
+        <div class="sticky-content">
+            <h2>Scroll down to see me stick!</h2>
+            <p>I'll become fixed when you scroll past me.</p>
+        </div>
+    </header>
+    
+    <!-- Main content -->
+    <div class="container">
+        <div class="content">
+            <h1>Position Property Demonstration</h1>
+            
+            <div class="section">
+                <h2>Understanding CSS Position</h2>
+                <p>The CSS position property controls how elements are positioned on a web page. It's essential for creating complex layouts and UI components.</p>
+                
+                <p>This page demonstrates three different position values:</p>
+                <ul>
+                    <li><strong>Fixed position</strong> - Navigation bar at top (always visible)</li>
+                    <li><strong>Sticky position</strong> - Header that sticks after scrolling</li>
+                    <li><strong>Fixed position</strong> - "Back to Top" button at bottom-right</li>
+                </ul>
+            </div>
+            
+            <!-- Content to create scroll -->
+            <div class="section">
+                <h2>Page Content</h2>
+                <p>Scroll down to see the sticky header become fixed and to see the "Back to Top" button in action.</p>
+                
+                <div class="demo-box">
+                    <h3>Fixed Navigation</h3>
+                    <p>The blue navigation bar at the top of the page uses <code>position: fixed</code>. It stays in the same place even when you scroll.</p>
+                </div>
+                
+                <div class="demo-box">
+                    <h3>Sticky Header</h3>
+                    <p>The gray header below the navigation uses <code>position: sticky</code>. It will stick to the top of the page once you scroll past it.</p>
+                </div>
+                
+                <h2>More Content to Enable Scrolling</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                
+                <h2>Even More Content</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                
+                <h2>Section Title</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                
+                <h2>Another Section</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                
+                <h2>Final Section</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Fixed Back to Top Button -->
+    <button class="back-to-top">
+        ↑ Back to Top
+    </button>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 MyWebsite. All rights reserved. | Position Property Demo</p>
+        </div>
+    </footer>
+</body>
+</html>

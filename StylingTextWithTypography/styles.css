@@ -1,0 +1,238 @@
+/* styles.css - Typography Styling for Literary Blog */
+
+/* ============================================
+   IMPORTING AND DEFINING FONT FAMILIES
+   ============================================ */
+
+/* 
+   Note: Google Fonts are already imported in the HTML head:
+   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+*/
+
+/* ============================================
+   STYLING ALL PARAGRAPH TAGS (<p>) IN ARTICLE
+   ============================================ */
+
+/* Main article container */
+.literary-article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* 
+   TYPOGRAPHY STYLING FOR ALL PARAGRAPH TAGS
+   This selector targets ALL <p> tags within .literary-article
+*/
+.literary-article p {
+    /* 1. FONT FAMILY - Primary typography choice */
+    font-family: 'Crimson Pro', serif;
+    
+    /* 2. FONT SIZE - Optimal for readability */
+    font-size: 18px; /* 18px = 1.125rem = optimal reading size */
+    
+    /* 3. LINE HEIGHT - Vertical spacing between lines */
+    line-height: 1.8; /* 180% of font size = 32.4px */
+    
+    /* 4. LETTER SPACING - Horizontal spacing between characters */
+    letter-spacing: 0.3px; /* Subtle enhancement for readability */
+    
+    /* 5. TEXT ALIGNMENT - How text is horizontally positioned */
+    text-align: justify; /* Creates straight edges on both sides */
+    
+    /* 6. COLOR - Text color with optimal contrast */
+    color: #2c3e50; /* Dark blue-gray for reduced eye strain */
+    
+    /* 7. TEXT SHADOW - Adds subtle depth and clarity */
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.05);
+    
+    /* Additional typography enhancements */
+    font-weight: 400; /* Regular weight for extended reading */
+    margin-bottom: 1.5em; /* Space between paragraphs */
+    text-justify: inter-word; /* Better justification algorithm */
+    hyphens: auto; /* Automatic hyphenation for justified text */
+    word-wrap: break-word; /* Prevent overflow */
+    overflow-wrap: break-word; /* Modern word break */
+}
+
+/* ============================================
+   SPECIFIC PARAGRAPH STYLING FOR DIFFERENT SECTIONS
+   ============================================ */
+
+/* Introduction paragraphs - slightly larger */
+.literary-article .introduction p {
+    font-size: 19px; /* 1px larger for introduction */
+    line-height: 1.85; /* Slightly more spacing */
+    color: #34495e; /* Slightly lighter color */
+    font-style: normal;
+}
+
+/* Main content paragraphs - standard styling */
+.literary-article .main-content p {
+    text-indent: 1.5em; /* First line indent for literary style */
+    margin-bottom: 1.8em; /* Slightly more space between paragraphs */
+}
+
+/* First paragraph after headings - no indent */
+.literary-article h2 + p,
+.literary-article h3 + p {
+    text-indent: 0; /* No indent after headings */
+}
+
+/* Conclusion paragraphs - distinct styling */
+.literary-article .conclusion p {
+    font-size: 18px;
+    line-height: 1.9; /* More spacious for concluding thoughts */
+    color: #2c3e50;
+    font-weight: 400;
+    border-left: 3px solid #3498db; /* Visual separation */
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+/* ============================================
+   HEADING STYLES (Complementary typography)
+   ============================================ */
+
+.literary-article h2 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 2.2rem; /* 35.2px */
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 2.5em 0 1em 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ecf0f1;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.literary-article h3 {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.6rem; /* 25.6px */
+    font-weight: 600;
+    color: #3498db;
+    margin: 2em 0 0.8em 0;
+    letter-spacing: 0.3px;
+}
+
+/* ============================================
+   SPECIAL TEXT EFFECTS AND ENHANCEMENTS
+   ============================================ */
+
+/* First letter styling for literary effect */
+.literary-article .introduction p:first-of-type::first-letter {
+    font-size: 3.5em; /* 63px */
+    font-weight: 600;
+    float: left;
+    line-height: 0.8;
+    margin: 0.1em 0.15em 0 0;
+    color: #2c3e50;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Blockquote styling */
+.literary-article blockquote {
+    font-family: 'Crimson Pro', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    line-height: 1.7;
+    letter-spacing: 0.2px;
+    color: #5d6d7e;
+    border-left: 4px solid #3498db;
+    padding: 20px 30px;
+    margin: 2em 40px;
+    background-color: #f8f9fa;
+    text-align: left;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Link styling within article */
+.literary-article a {
+    color: #3498db;
+    text-decoration: none;
+    border-bottom: 1px dotted #3498db;
+    transition: all 0.3s ease;
+    padding-bottom: 1px;
+}
+
+.literary-article a:hover {
+    color: #2980b9;
+    border-bottom: 1px solid #2980b9;
+}
+
+/* ============================================
+   RESPONSIVE TYPOGRAPHY ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+    .literary-article {
+        padding: 20px;
+        margin: 0 10px;
+    }
+    
+    .literary-article p {
+        font-size: 17px; /* Slightly smaller on mobile */
+        line-height: 1.7; /* Adjust line height */
+        letter-spacing: 0.2px; /* Slightly less letter spacing */
+        text-align: left; /* Change from justified to left-aligned on mobile */
+        text-justify: auto; /* Disable justification on mobile */
+        hyphens: manual; /* Control hyphenation manually */
+    }
+    
+    .literary-article .main-content p {
+        text-indent: 1em; /* Smaller indent on mobile */
+    }
+    
+    .literary-article h2 {
+        font-size: 1.8rem;
+        text-align: left; /* Left align headings on mobile */
+    }
+    
+    .literary-article .introduction p:first-of-type::first-letter {
+        font-size: 2.8em; /* Smaller drop cap on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .literary-article p {
+        font-size: 16px; /* Minimum readable size */
+        line-height: 1.6; /* Tighter line height on very small screens */
+    }
+}
+
+/* ============================================
+   PRINT STYLING
+   ============================================ */
+
+@media print {
+    .literary-article {
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .literary-article p {
+        font-size: 12pt; /* Print standard */
+        line-height: 1.5; /* Print standard */
+        color: #000000; /* Pure black for print */
+        text-shadow: none; /* Remove shadows for print */
+    }
+    
+    .literary-article h2 {
+        font-size: 16pt;
+        color: #000000;
+    }
+    
+    /* Prevent page breaks inside paragraphs */
+    .literary-article p {
+        page-break-inside: avoid;
+    }
+    
+    /* Force page breaks before main sections */
+    .literary-article h2 {
+        page-break-before: always;
+    }
+}

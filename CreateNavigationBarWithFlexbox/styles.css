@@ -1,0 +1,136 @@
+/* styles.css - Flexbox Navigation Bar */
+
+/* ============================================
+   FLEXBOX NAVIGATION BAR
+   ============================================ */
+
+/* Navbar container */
+.navbar {
+    display: flex;                   /* Makes navbar a flex container */
+    justify-content: space-between;  /* Logo left, menu right */
+    align-items: center;             /* Vertically centers items */
+    
+    /* Basic styling */
+    background-color: white;         /* White background */
+    padding: 15px 30px;              /* Internal spacing */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    
+    /* Position at top */
+    position: sticky;                /* Sticks when scrolling */
+    top: 0;                          /* Sticks to top */
+    z-index: 100;                    /* Stays above content */
+}
+
+/* ============================================
+   LOGO STYLING
+   ============================================ */
+
+.logo {
+    display: flex;                   /* Flex for logo and text */
+    align-items: center;             /* Center logo and text vertically */
+    gap: 10px;                       /* Space between logo and text */
+    
+    /* Text styling */
+    font-size: 24px;                 /* Logo size */
+    font-weight: bold;               /* Bold text */
+    color: #2c3e50;                  /* Dark blue-gray color */
+}
+
+.logo img {
+    width: 40px;                     /* Logo image size */
+    height: 40px;                    /* Logo image size */
+    border-radius: 5px;              /* Rounded corners */
+}
+
+/* ============================================
+   MENU STYLING
+   ============================================ */
+
+.menu {
+    display: flex;                   /* Makes menu a flex container */
+    gap: 20px;                       /* Space between menu items */
+    
+    /* For larger screens, items are in a row */
+    flex-direction: row;             /* Default: horizontal layout */
+}
+
+.menu-link {
+    color: #2c3e50;                  /* Text color */
+    text-decoration: none;           /* Remove underline */
+    font-size: 16px;                 /* Text size */
+    padding: 8px 12px;               /* Clickable area */
+    border-radius: 4px;              /* Rounded corners */
+    transition: all 0.3s ease;       /* Smooth transitions */
+}
+
+.menu-link:hover {
+    background-color: #3498db;       /* Blue background on hover */
+    color: white;                    /* White text on hover */
+}
+
+/* ============================================
+   RESPONSIVE DESIGN WITH FLEXBOX
+   ============================================ */
+
+/* Tablet screens */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;          /* Less padding on sides */
+    }
+    
+    .menu {
+        gap: 15px;                   /* Less space between items */
+    }
+    
+    .logo {
+        font-size: 20px;             /* Smaller logo text */
+    }
+    
+    .logo img {
+        width: 35px;                 /* Smaller logo */
+        height: 35px;                /* Smaller logo */
+    }
+}
+
+/* Mobile screens - stack the menu */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;      /* Stack logo and menu vertically */
+        padding: 15px;               /* Even less padding */
+        gap: 15px;                   /* Space between stacked items */
+    }
+    
+    .menu {
+        flex-direction: column;      /* Stack menu links vertically */
+        width: 100%;                 /* Full width for stacked menu */
+        gap: 10px;                   /* Space between stacked links */
+        text-align: center;          /* Center text in stacked layout */
+    }
+    
+    .menu-link {
+        width: 100%;                 /* Full width buttons */
+        padding: 12px 0;             /* Taller buttons for touch */
+        display: block;              /* Block-level for full width */
+    }
+    
+    .logo {
+        justify-content: center;     /* Center logo on mobile */
+        width: 100%;                 /* Full width for centering */
+    }
+}
+
+/* Very small screens */
+@media (max-width: 400px) {
+    .navbar {
+        padding: 10px;               /* Minimal padding */
+    }
+    
+    .logo {
+        font-size: 18px;             /* Even smaller logo text */
+    }
+    
+    .logo img {
+        width: 30px;                 /* Even smaller logo */
+        height: 30px;                /* Even smaller logo */
+    }
+}

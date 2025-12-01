@@ -1,0 +1,310 @@
+/* styles.css - Advanced Selectors Implementation */
+
+/* ============================================
+   RESET AND BASE STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================================
+   NAVIGATION MENU STYLES WITH ADVANCED SELECTORS
+   ============================================ */
+
+/* Base navigation styling */
+.main-nav {
+    background: linear-gradient(135deg, #1a2980, #26d0ce);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+/* Menu container */
+.menu {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+/* Menu items */
+.menu > li {
+    position: relative;
+}
+
+/* ============================================
+   1. CHILD SELECTOR (>) - Direct children only
+   ============================================ */
+
+/* Target ONLY direct <li> children of .menu (not submenu items) */
+.menu > li {
+    border: 2px solid #e74c3c;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Highlight the child selector visually */
+.menu > li::before {
+    content: "Child";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #e74c3c;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.menu > li:hover::before {
+    opacity: 1;
+}
+
+/* ============================================
+   2. first-child PSEUDO-CLASS - First menu item
+   ============================================ */
+
+/* Make the first menu item bold with special styling */
+.menu > li:first-child {
+    font-weight: 900;
+    background-color: rgba(52, 152, 219, 0.3);
+    border-color: #3498db;
+}
+
+/* Add a visual indicator for first-child */
+.menu > li:first-child::after {
+    content: "First";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #3498db;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* ============================================
+   3. :hover PSEUDO-CLASS - Interactive states
+   ============================================ */
+
+/* Base link styling */
+.nav-link {
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effect for ALL navigation links */
+.nav-link:hover {
+    color: #2ecc71 !important;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Underline animation on hover */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #2ecc71;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* ============================================
+   4. ATTRIBUTE SELECTORS - Active page styling
+   ============================================ */
+
+/* Target link with aria-current="page" attribute */
+.nav-link[aria-current="page"] {
+    background-color: #f39c12 !important;
+    color: #2c3e50 !important;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(243, 156, 18, 0.4);
+}
+
+/* Add a "Active" badge to the attribute selector */
+.nav-link[aria-current="page"]::before {
+    content: "Active";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #e74c3c;
+    color: white;
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+/* Additional attribute selector examples */
+a[data-page] {
+    border-left: 3px solid #9b59b6;
+}
+
+a[target="_blank"]::after {
+    content: " ↗";
+    font-size: 0.8em;
+}
+
+a[href^="#"] {
+    text-decoration: none;
+}
+
+a[data-help="true"] {
+    background-color: #e8f4fc;
+    color: #2980b9;
+}
+
+/* ============================================
+   SUBMENU STYLING (For comparison)
+   ============================================ */
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    list-style: none;
+    min-width: 200px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.menu > li:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.sub-link {
+    color: #333 !important;
+    padding: 12px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.sub-link:hover {
+    background-color: #f8f9fa !important;
+    color: #2c3e50 !important;
+}
+
+/* Note: Submenu items DON'T have borders because they're not direct children of .menu */
+
+/* ============================================
+   SECONDARY NAVIGATION
+   ============================================ */
+
+.secondary-nav {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.nav-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Child selector in action - only direct children get full styling */
+.nav-group > a {
+    padding: 12px 25px;
+    background: #3498db;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.nav-group > a:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
+
+/* ============================================
+   PAGE CONTROLS
+   ============================================ */
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 20px;
+    background: #ecf0f1;
+    border-radius: 10px;
+}
+
+.page-link {
+    padding: 10px 20px;
+    background: #95a5a6;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+/* Attribute selector for active page */
+.page-link[data-active="true"] {
+    background: #e74c3c;
+    font-weight: bold;
+}
+
+.page-link:hover {
+    background: #7f8c8d;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+    }
+    
+    .menu > li {
+        width: 100%;
+    }
+    
+    .submenu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.1);
+        margin-top: 5px;
+    }
+}
