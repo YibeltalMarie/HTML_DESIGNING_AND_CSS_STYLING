@@ -1,0 +1,148 @@
+/* styles.css - Responsive Card Layout */
+
+/* ============================================
+   CARD CONTAINER - FLEXBOX LAYOUT
+   ============================================ */
+
+.cards {
+    display: flex;           /* Creates flex container */
+    flex-wrap: wrap;         /* Allows items to wrap to new lines */
+    gap: 30px;               /* Space between cards */
+    margin: 0 auto;          /* Center the container */
+}
+
+/* ============================================
+   INDIVIDUAL CARD STYLING
+   ============================================ */
+
+.card {
+    flex: 1;                 /* Makes cards flexible and equal width */
+    min-width: 300px;        /* Minimum width before wrapping */
+    max-width: 350px;        /* Maximum width of cards */
+    
+    /* Card styling */
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    
+    /* Makes all cards equal height */
+    display: flex;
+    flex-direction: column;
+    
+    /* Smooth hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   CARD CONTENT STYLING
+   ============================================ */
+
+.card-icon {
+    font-size: 48px;          /* Large icon size */
+    text-align: center;       /* Center the icon */
+    margin-bottom: 20px;      /* Space below icon */
+}
+
+.card-title {
+    font-size: 22px;          /* Title size */
+    color: #2c3e50;           /* Dark blue-gray color */
+    margin-bottom: 15px;      /* Space below title */
+    text-align: center;       /* Center the title */
+}
+
+.card-description {
+    color: #7f8c8d;           /* Gray color for text */
+    line-height: 1.6;         /* Comfortable line spacing */
+    margin-bottom: 25px;      /* Space above button */
+    flex-grow: 1;             /* Pushes button to bottom */
+}
+
+.card-button {
+    background-color: #3498db; /* Blue button */
+    color: white;             /* White text */
+    border: none;             /* Remove border */
+    padding: 12px 20px;       /* Button padding */
+    font-size: 16px;          /* Text size */
+    border-radius: 5px;       /* Rounded corners */
+    cursor: pointer;          /* Pointer cursor */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    width: 100%;              /* Full width button */
+    margin-top: auto;         /* Pushes button to bottom of card */
+}
+
+.card-button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* ============================================
+   RESPONSIVE DESIGN WITH MEDIA QUERIES
+   ============================================ */
+
+/* Tablet screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .card {
+        flex: 1 0 45%;        /* Two cards per row, minimum 45% width */
+        min-width: 250px;     /* Smaller minimum width */
+        max-width: none;      /* Remove max width constraint */
+    }
+    
+    .cards {
+        gap: 20px;            /* Less space between cards */
+    }
+}
+
+/* Small tablet screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 0 45%;        /* Still two cards per row */
+    }
+}
+
+/* Mobile screens (max-width: 600px) */
+@media (max-width: 600px) {
+    .cards {
+        flex-direction: column; /* Stack cards vertically */
+        gap: 25px;            /* Vertical spacing between stacked cards */
+    }
+    
+    .card {
+        flex: none;           /* Remove flex sizing */
+        width: 100%;          /* Full width cards */
+        max-width: 100%;      /* No max width on mobile */
+        min-width: 0;         /* Remove min width */
+    }
+    
+    .card-title {
+        font-size: 20px;      /* Slightly smaller title on mobile */
+    }
+    
+    .card-description {
+        font-size: 15px;      /* Slightly smaller text on mobile */
+    }
+}
+
+/* Very small mobile screens (max-width: 400px) */
+@media (max-width: 400px) {
+    .cards {
+        gap: 20px;            /* Less vertical spacing */
+    }
+    
+    .card {
+        padding: 20px;        /* Less padding on very small screens */
+    }
+    
+    .card-icon {
+        font-size: 40px;      /* Smaller icons */
+    }
+    
+    .card-button {
+        padding: 10px 15px;   /* Smaller button */
+        font-size: 15px;      /* Smaller button text */
+    }
+}

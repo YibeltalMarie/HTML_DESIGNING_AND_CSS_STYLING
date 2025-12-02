@@ -1,0 +1,174 @@
+/* styles.css - Responsive Gallery with CSS Grid */
+
+/* ============================================
+   GALLERY CONTAINER - RESPONSIVE CSS GRID
+   ============================================ */
+
+.gallery-grid {
+    display: grid;  /* Creates grid container */
+    
+    /* Responsive columns - THE MAGIC LINE */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    
+    /* Spacing between grid items */
+    gap: 20px;
+    
+    /* Ensure gallery takes full width */
+    width: 100%;
+}
+
+/* ============================================
+   GALLERY ITEM STYLING
+   ============================================ */
+
+.gallery-item {
+    /* Make items square or maintain aspect ratio */
+    aspect-ratio: 4 / 3;  /* 4:3 aspect ratio (optional) */
+    
+    /* Container styling */
+    border-radius: 8px;
+    overflow: hidden;  /* Keeps images within rounded corners */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    
+    /* For hover effects */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Position for caption */
+    position: relative;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   IMAGE STYLING
+   ============================================ */
+
+.gallery-item img {
+    width: 100%;      /* Fill container width */
+    height: 100%;     /* Fill container height */
+    
+    /* CRITICAL: Maintain aspect ratio without distortion */
+    object-fit: cover;
+    
+    /* Smooth image loading */
+    display: block;
+    
+    /* Prevent images from being too tall on some screens */
+    max-height: 300px;
+    
+    /* Smooth transition on hover */
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);  /* Slight zoom on hover */
+}
+
+/* ============================================
+   IMAGE CAPTION
+   ============================================ */
+
+.image-caption {
+    /* Position at bottom of image */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    /* Styling */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 12px 15px;
+    
+    /* Text styling */
+    font-size: 14px;
+    font-weight: 500;
+    
+    /* Smooth appearance */
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .image-caption {
+    transform: translateY(0);  /* Slide up on hover */
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+/* Tablet screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .gallery-grid {
+        /* Slightly smaller minimum column width */
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+    }
+}
+
+/* Small tablet screens (max-width: 768px) */
+@media (max-width: 768px) {
+    .gallery-grid {
+        /* 2 columns on most tablets */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 12px;
+    }
+    
+    .gallery-item {
+        aspect-ratio: 3 / 2;  /* Slightly different aspect ratio */
+    }
+}
+
+/* Mobile screens (max-width: 600px) */
+@media (max-width: 600px) {
+    .gallery-grid {
+        /* 1-2 columns on mobile */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 10px;
+    }
+    
+    .image-caption {
+        /* Always show caption on mobile for accessibility */
+        transform: translateY(0);
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+    
+    .gallery-item:hover .image-caption {
+        /* No transform needed since already visible */
+        transform: translateY(0);
+    }
+}
+
+/* Very small mobile screens (max-width: 400px) */
+@media (max-width: 400px) {
+    .gallery-grid {
+        /* Single column on very small screens */
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .gallery-item {
+        aspect-ratio: 16 / 9;  /* Wide aspect ratio for mobile */
+        max-height: 250px;
+    }
+}
+
+/* ============================================
+   LOADING STATE (Optional enhancement)
+   ============================================ */
+
+/* Add a loading placeholder for images */
+.gallery-item.loading {
+    background-color: #f0f0f0;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.6; }
+}

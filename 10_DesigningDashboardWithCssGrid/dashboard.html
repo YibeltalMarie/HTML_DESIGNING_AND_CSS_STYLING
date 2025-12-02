@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - CSS Grid Layout</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic page styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin: 20px 0 30px;
+            color: #2c3e50;
+        }
+        
+        .page-title h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .page-title p {
+            color: #7f8c8d;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .instructions {
+            max-width: 1200px;
+            margin: 0 auto 30px;
+            padding: 20px;
+            background-color: #e8f4fc;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .instructions h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ul {
+            margin-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        footer.page-footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #7f8c8d;
+            border-top: 1px solid #ecf0f1;
+        }
+        
+        .grid-visualization {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .grid-diagram {
+            display: grid;
+            grid-template-areas: 
+                "header header header"
+                "sidebar main main"
+                "footer footer footer";
+            grid-template-columns: 1fr 2fr 2fr;
+            grid-template-rows: 50px 200px 50px;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .grid-item {
+            border: 2px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .header-demo {
+            grid-area: header;
+            background-color: rgba(52, 152, 219, 0.2);
+            border-color: #3498db;
+        }
+        
+        .sidebar-demo {
+            grid-area: sidebar;
+            background-color: rgba(46, 204, 113, 0.2);
+            border-color: #2ecc71;
+        }
+        
+        .main-demo {
+            grid-area: main;
+            background-color: rgba(155, 89, 182, 0.2);
+            border-color: #9b59b6;
+        }
+        
+        .footer-demo {
+            grid-area: footer;
+            background-color: rgba(241, 196, 15, 0.2);
+            border-color: #f1c40f;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-title">
+        <h1>Admin Dashboard</h1>
+        <p>This dashboard layout is built using CSS Grid with grid-template-areas. Resize your browser to see the responsive behavior.</p>
+    </div>
+    
+    <div class="instructions">
+        <h2>Dashboard Layout Structure:</h2>
+        <ul>
+            <li><strong>Header:</strong> Top navigation and branding (blue area)</li>
+            <li><strong>Sidebar:</strong> Left navigation menu (green area)</li>
+            <li><strong>Main Content:</strong> Central dashboard content (purple area)</li>
+            <li><strong>Footer:</strong> Bottom information and links (yellow area)</li>
+        </ul>
+    </div>
+    
+    <div class="grid-visualization">
+        <h3>Grid Template Areas Visualization:</h3>
+        <p>The layout is defined using these grid areas:</p>
+        <div class="grid-diagram">
+            <div class="grid-item header-demo">HEADER</div>
+            <div class="grid-item sidebar-demo">SIDEBAR</div>
+            <div class="grid-item main-demo">MAIN CONTENT</div>
+            <div class="grid-item footer-demo">FOOTER</div>
+        </div>
+        <p>Grid areas: "header header header" | "sidebar main main" | "footer footer footer"</p>
+    </div>
+    
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">📊</span>
+                    <h1>Admin Dashboard</h1>
+                </div>
+                <div class="user-info">
+                    <span class="user-name">John Smith</span>
+                    <span class="user-avatar">👤</span>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <nav class="sidebar-nav">
+                <h3>Navigation</h3>
+                <ul>
+                    <li class="nav-item active">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">Dashboard</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-icon">👥</span>
+                        <span class="nav-text">Users</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-icon">📊</span>
+                        <span class="nav-text">Analytics</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">Settings</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-icon">📈</span>
+                        <span class="nav-text">Reports</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-icon">📦</span>
+                        <span class="nav-text">Products</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-icon">🛒</span>
+                        <span class="nav-text">Orders</span>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-icon">🆘</span>
+                        <span class="nav-text">Support</span>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <section class="stats-overview">
+                <h2>Dashboard Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Users</h3>
+                        <p class="stat-number">1,248</p>
+                        <p class="stat-change">+12% this month</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Revenue</h3>
+                        <p class="stat-number">$24,580</p>
+                        <p class="stat-change">+8% this month</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Orders</h3>
+                        <p class="stat-number">342</p>
+                        <p class="stat-change">+5% this month</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Active Now</h3>
+                        <p class="stat-number">48</p>
+                        <p class="stat-change">+2 from yesterday</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="recent-activity">
+                <h2>Recent Activity</h2>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <span class="activity-icon">🔄</span>
+                        <div class="activity-details">
+                            <p><strong>User registration</strong> - New user "Alex Johnson" signed up</p>
+                            <p class="activity-time">10 minutes ago</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">💳</span>
+                        <div class="activity-details">
+                            <p><strong>Order completed</strong> - Order #4582 for $245.99</p>
+                            <p class="activity-time">45 minutes ago</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">📧</span>
+                        <div class="activity-details">
+                            <p><strong>Support ticket</strong> - New ticket opened by Sarah Miller</p>
+                            <p class="activity-time">2 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <span class="activity-icon">📈</span>
+                        <div class="activity-details">
+                            <p><strong>Report generated</strong> - Monthly sales report ready</p>
+                            <p class="activity-time">5 hours ago</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="actions-grid">
+                    <button class="action-button">
+                        <span class="action-icon">➕</span>
+                        <span class="action-text">Add User</span>
+                    </button>
+                    <button class="action-button">
+                        <span class="action-icon">📊</span>
+                        <span class="action-text">View Reports</span>
+                    </button>
+                    <button class="action-button">
+                        <span class="action-icon">⚙️</span>
+                        <span class="action-text">Settings</span>
+                    </button>
+                    <button class="action-button">
+                        <span class="action-icon">📧</span>
+                        <span class="action-text">Send Email</span>
+                    </button>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <div class="footer-content">
+                <p>&copy; 2023 Admin Dashboard. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">Contact Support</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <footer class="page-footer">
+        <p>CSS Grid Dashboard Layout Demo | grid-template-areas implementation</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Photo Gallery - CSS Grid</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic page styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 32px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        
+        .instructions {
+            background-color: #e8f4fc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .instructions h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .instructions p {
+            margin-bottom: 10px;
+        }
+        
+        .info-box {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #dee2e6;
+        }
+        
+        .info-box h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .grid-explanation {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .demo-text {
+            text-align: center;
+            padding: 15px;
+            background-color: #fff3cd;
+            border-radius: 5px;
+            margin: 20px 0;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            color: #7f8c8d;
+            border-top: 1px solid #ecf0f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Photography Portfolio Gallery</h1>
+            <p class="subtitle">A fully responsive gallery that automatically adjusts to any screen size using CSS Grid</p>
+            
+            <div class="demo-text">
+                <p><strong>Try it:</strong> Resize your browser window to see the gallery adjust automatically!</p>
+                <p>On desktop: 4 columns → On tablet: 2-3 columns → On mobile: 1-2 columns</p>
+            </div>
+        </header>
+        
+        <div class="instructions">
+            <h2>Gallery Features:</h2>
+            <p>• Responsive columns that adjust automatically</p>
+            <p>• Images maintain aspect ratio with object-fit: cover</p>
+            <p>• Consistent spacing between images</p>
+            <p>• No media queries needed for basic responsiveness</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>How This Gallery Works:</h3>
+            <p>The magic happens with this single line of CSS:</p>
+            <code style="display: block; background: #2c3e50; color: white; padding: 10px; border-radius: 5px; margin: 10px 0;">
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            </code>
+            <p>This automatically creates columns that are at least 250px wide and fill the available space.</p>
+        </div>
+        
+        <!-- Gallery Container -->
+        <div class="gallery-grid">
+            <!-- 12 images for the gallery -->
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Mountain landscape">
+                <div class="image-caption">Mountain Sunrise</div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b" alt="Ocean waves">
+                <div class="image-caption">Ocean Waves</div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e" alt="Forest path">
+                <div class="image-caption">Forest Path</div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05" alt="Misty mountains">
+                <div class="image-caption">Misty Mountains</div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07" alt="Desert dunes">
+                <div class="image-caption">Desert Dunes</div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000" alt="Northern lights">
+                <div class="image-caption">Northern Lights</div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1" alt="Beach sunset">
+                <div class="image-caption">Beach Sunset</div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Lake reflection">
+                <div class="image-caption">Lake Reflection</div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1476820865390-c52aeebb9891" alt="City skyline">
+                <div class="image-caption">City Skyline</div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5" alt="Waterfall">
+                <div class="image-caption">Waterfall</div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8" alt="Night sky">
+                <div class="image-caption">Night Sky</div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff" alt="Wildflowers">
+                <div class="image-caption">Wildflowers</div>
+            </div>
+        </div>
+        
+        <div class="grid-explanation">
+            <h2>CSS Grid Concepts Explained:</h2>
+            <p><strong>repeat(auto-fit, minmax(250px, 1fr))</strong> - This is the key to responsive grids:</p>
+            <ul>
+                <li><strong>repeat()</strong>: Creates multiple columns with the same pattern</li>
+                <li><strong>auto-fit</strong>: Automatically fits as many columns as possible</li>
+                <li><strong>minmax(250px, 1fr)</strong>: Each column is at least 250px, but can grow equally</li>
+                <li><strong>gap</strong>: Creates consistent spacing between items</li>
+                <li><strong>object-fit: cover</strong>: Makes images fill their containers without distortion</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Photography Portfolio. Responsive CSS Grid Gallery Demo.</p>
+    </footer>
+</body>
+</html>

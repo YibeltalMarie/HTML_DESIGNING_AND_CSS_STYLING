@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Card Layout with Flexbox</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic page styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .description {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #7f8c8d;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 18px;
+        }
+        
+        .instructions {
+            background-color: #e8f4fc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .instructions h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ul {
+            margin-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            color: #7f8c8d;
+            border-top: 1px solid #ecf0f1;
+        }
+        
+        /* Responsive behavior note */
+        .responsive-note {
+            text-align: center;
+            margin: 30px 0;
+            padding: 15px;
+            background-color: #fff3cd;
+            border-radius: 5px;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Product Features</h1>
+            <p class="description">Our products come with amazing features designed to make your life easier. Each card below represents a different feature available in our premium package.</p>
+            
+            <div class="responsive-note">
+                <p><strong>Try it:</strong> Resize your browser window to see the cards rearrange automatically!</p>
+                <p>On desktop: Cards are in a row → On tablet: Cards wrap to new lines → On mobile: Cards stack vertically</p>
+            </div>
+        </header>
+        
+        <div class="instructions">
+            <h2>What This Demo Shows:</h2>
+            <ul>
+                <li><strong>Flexbox Row Layout:</strong> Cards arranged horizontally on desktop</li>
+                <li><strong>Flex Wrap:</strong> Cards wrap to new lines when there's not enough space</li>
+                <li><strong>Equal Height Cards:</strong> All cards have the same height regardless of content</li>
+                <li><strong>Responsive Design:</strong> Cards stack vertically on mobile screens</li>
+            </ul>
+        </div>
+        
+        <!-- Card container -->
+        <div class="cards">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-icon">🚀</div>
+                <h3 class="card-title">Fast Performance</h3>
+                <p class="card-description">Our technology delivers lightning-fast performance, reducing load times by up to 70%. Experience seamless operation even with complex tasks.</p>
+                <button class="card-button">Learn More</button>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-icon">🔒</div>
+                <h3 class="card-title">Advanced Security</h3>
+                <p class="card-description">Enterprise-grade security with end-to-end encryption, two-factor authentication, and regular security audits to keep your data safe.</p>
+                <button class="card-button">Learn More</button>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <h3 class="card-title">Mobile Optimized</h3>
+                <p class="card-description">Fully responsive design that works perfectly on all devices from desktop computers to smartphones and tablets.</p>
+                <button class="card-button">Learn More</button>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-icon">🔄</div>
+                <h3 class="card-title">Easy Integration</h3>
+                <p class="card-description">Seamlessly integrates with your existing tools and workflows. Connect with popular platforms in just a few clicks.</p>
+                <button class="card-button">Learn More</button>
+            </div>
+            
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="card-icon">👥</div>
+                <h3 class="card-title">Team Collaboration</h3>
+                <p class="card-description">Real-time collaboration features allow your team to work together efficiently, no matter where they are located.</p>
+                <button class="card-button">Learn More</button>
+            </div>
+            
+            <!-- Card 6 -->
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3 class="card-title">Analytics Dashboard</h3>
+                <p class="card-description">Comprehensive analytics and reporting tools give you valuable insights into your performance and help you make data-driven decisions.</p>
+                <button class="card-button">Learn More</button>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h2>Flexbox Properties Used:</h2>
+            <ul>
+                <li><code>display: flex</code> - Creates flex container</li>
+                <li><code>flex-wrap: wrap</code> - Allows cards to wrap to new lines</li>
+                <li><code>flex: 1</code> on cards - Makes cards flexible and equal height</li>
+                <li><code>flex-direction: column</code> on mobile - Stacks cards vertically</li>
+                <li><code>@media</code> queries - Applies different styles based on screen size</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Product Features Demo. Responsive Card Layout with Flexbox.</p>
+    </footer>
+</body>
+</html>
