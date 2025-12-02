@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Product Card</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>E-commerce Store</h1>
+        <p>Hover over the product card to see the "lift" effect</p>
+    </header>
+    
+    <main class="main-content">
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Premium Headphones">
+                <div class="product-badge">SALE</div>
+            </div>
+            
+            <div class="product-details">
+                <span class="product-category">ELECTRONICS</span>
+                <h2 class="product-title">Premium Wireless Headphones</h2>
+                <p class="product-description">Experience immersive sound quality with noise cancellation technology. Features 30-hour battery life and comfortable over-ear design.</p>
+                
+                <div class="product-info">
+                    <div class="product-price">
+                        <span class="current-price">$149.99</span>
+                        <span class="original-price">$199.99</span>
+                    </div>
+                    <div class="product-rating">
+                        <div class="stars">★★★★★</div>
+                        <span class="rating-count">(4.8/5)</span>
+                    </div>
+                </div>
+                
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+    
+    <section class="instructions">
+        <h2>Features Implemented</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <h3>CSS Transition</h3>
+                <p>Applied to the <code>transform</code> property for smooth hover effect</p>
+            </div>
+            <div class="feature">
+                <h3>Transform: Scale()</h3>
+                <p>Creates the "lift" effect by scaling up to 1.05x on hover</p>
+            </div>
+            <div class="feature">
+                <h3>@keyframes</h3>
+                <p>Defines the <code>fadeInCard</code> animation for page load</p>
+            </div>
+            <div class="feature">
+                <h3>Animation Properties</h3>
+                <p>Applied to product card with <code>animation: fadeInCard 1.2s ease-out</code></p>
+            </div>
+        </div>
+        <p class="refresh-note">Refresh the page to see the loading animation again</p>
+    </section>
+    
+    <footer class="footer">
+        <p>E-commerce Product Card with CSS Transitions & Animations</p>
+    </footer>
+</body>
+</html>

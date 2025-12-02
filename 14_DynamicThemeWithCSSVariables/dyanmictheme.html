@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Platform - Light/Dark Mode</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <input type="checkbox" id="theme-toggle" class="theme-toggle">
+    
+    <div class="container">
+        <header class="blog-header">
+            <h1>Blog Platform</h1>
+            <p class="blog-subtitle">Thoughts, ideas, and stories</p>
+            
+            <div class="theme-switcher">
+                <label for="theme-toggle" class="theme-switch">
+                    <span class="theme-switch-track">
+                        <span class="theme-switch-thumb"></span>
+                    </span>
+                    <span class="theme-label light-label">Light</span>
+                    <span class="theme-label dark-label">Dark</span>
+                </label>
+            </div>
+        </header>
+        
+        <nav class="blog-nav">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Articles</a>
+            <a href="#" class="nav-link">Categories</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Contact</a>
+        </nav>
+        
+        <main class="blog-content">
+            <article class="blog-post">
+                <div class="post-meta">
+                    <span class="post-category">Technology</span>
+                    <span class="post-date">March 15, 2024</span>
+                </div>
+                
+                <h2 class="post-title">The Future of Web Development</h2>
+                
+                <div class="post-author">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Author" class="author-avatar">
+                    <div class="author-info">
+                        <h4 class="author-name">Alex Johnson</h4>
+                        <p class="author-title">Senior Developer</p>
+                    </div>
+                </div>
+                
+                <div class="post-content">
+                    <p>Web development continues to evolve at a rapid pace. With the introduction of new frameworks, tools, and best practices, developers are able to create more dynamic and responsive websites than ever before.</p>
+                    
+                    <p>The adoption of CSS custom properties (variables) has revolutionized how we manage styles across large projects. Combined with modern layout techniques like Flexbox and Grid, we can create complex designs with cleaner, more maintainable code.</p>
+                    
+                    <blockquote class="post-quote">
+                        "The power of CSS variables lies in their ability to create dynamic themes that can be changed without touching the actual CSS rules."
+                    </blockquote>
+                    
+                    <p>Looking ahead, we can expect even more integration between CSS and JavaScript, blurring the lines between styling and interactivity. The future of web development is undoubtedly exciting!</p>
+                </div>
+                
+                <div class="post-tags">
+                    <span class="tag">CSS</span>
+                    <span class="tag">Web Development</span>
+                    <span class="tag">Frontend</span>
+                    <span class="tag">Design Systems</span>
+                </div>
+            </article>
+            
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">About This Blog</h3>
+                    <p class="sidebar-content">This blog explores the latest trends in web development, design, and technology. Our mission is to share knowledge and inspire creators.</p>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Recent Posts</h3>
+                    <ul class="recent-posts">
+                        <li><a href="#" class="recent-post-link">Mastering CSS Grid</a></li>
+                        <li><a href="#" class="recent-post-link">JavaScript ES2023 Features</a></li>
+                        <li><a href="#" class="recent-post-link">Accessibility Best Practices</a></li>
+                        <li><a href="#" class="recent-post-link">Responsive Design Patterns</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Theme Demo</h3>
+                    <p class="sidebar-content">This page uses CSS custom properties (variables) to dynamically switch between light and dark themes. Try toggling the switch in the header!</p>
+                    
+                    <div class="theme-demo">
+                        <div class="demo-box primary-bg">Primary Color</div>
+                        <div class="demo-box secondary-bg">Secondary Color</div>
+                        <div class="demo-box accent-bg">Accent Color</div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+        
+        <footer class="blog-footer">
+            <div class="footer-content">
+                <p>Blog Platform &copy; 2024. All rights reserved.</p>
+                <p>This theme uses CSS Custom Properties for dynamic styling.</p>
+            </div>
+            
+            <div class="implementation-details">
+                <h4>Implementation Details:</h4>
+                <ul>
+                    <li><strong>CSS Custom Properties:</strong> Defined in <code>:root</code> for light mode</li>
+                    <li><strong>Dark Mode:</strong> Variables redefined when <code>#theme-toggle:checked</code></li>
+                    <li><strong>var() function:</strong> Used throughout CSS to reference variables</li>
+                    <li><strong>No JavaScript:</strong> Pure CSS solution using checkbox hack</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+/* Light theme variables */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --primary-color: #0066cc;
+    --secondary-color: #f0f0f0;
+}
+
+/* Dark theme variables when checkbox is checked */
+#theme-toggle:checked ~ .container {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --primary-color: #4dabf7;
+    --secondary-color: #1e1e1e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+.theme-toggle {
+    display: none;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+h1 {
+    color: var(--primary-color);
+}
+
+.toggle-button {
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+}
+
+.toggle-button:hover {
+    opacity: 0.9;
+}
+
+.blog-post {
+    margin: 40px 0;
+    padding: 30px;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 1px solid var(--secondary-color);
+    text-align: center;
+    color: var(--text-color);
+}

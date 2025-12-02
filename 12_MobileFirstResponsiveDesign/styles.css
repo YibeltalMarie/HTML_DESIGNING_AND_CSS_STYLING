@@ -1,0 +1,147 @@
+/* ============================================
+   MOBILE STYLES (Default - No media query)
+   ============================================ */
+
+/* Base styles for mobile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px; /* Small font for mobile */
+    line-height: 1.4;
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 1.5rem; /* 1.5 × 14px = 21px */
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 0.9rem; /* 0.9 × 14px = 12.6px */
+}
+
+/* Single column layout for mobile */
+.content-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    font-size: 1.2rem; /* 1.2 × 14px = 16.8px */
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #34495e;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   TABLET STYLES (min-width: 768px)
+   ============================================ */
+
+@media (min-width: 768px) {
+    body {
+        font-size: 16px; /* Medium font for tablet */
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2rem; /* 2 × 16px = 32px */
+    }
+    
+    p {
+        font-size: 1rem; /* 1 × 16px = 16px */
+    }
+    
+    /* Two column layout for tablet */
+    .content-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .card {
+        flex: 0 0 calc(50% - 10px); /* 2 columns */
+    }
+    
+    .card h2 {
+        font-size: 1.4rem; /* 1.4 × 16px = 22.4px */
+    }
+    
+    footer {
+        padding: 20px;
+        font-size: 1rem;
+    }
+}
+
+/* ============================================
+   DESKTOP STYLES (min-width: 1024px)
+   ============================================ */
+
+@media (min-width: 1024px) {
+    body {
+        font-size: 18px; /* Large font for desktop */
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2.5rem; /* 2.5 × 18px = 45px */
+    }
+    
+    p {
+        font-size: 1.1rem; /* 1.1 × 18px = 19.8px */
+    }
+    
+    /* Three column layout for desktop */
+    .card {
+        flex: 0 0 calc(33.333% - 13.33px); /* 3 columns */
+    }
+    
+    .card h2 {
+        font-size: 1.5rem; /* 1.5 × 18px = 27px */
+    }
+    
+    .content-grid {
+        gap: 20px;
+    }
+    
+    footer {
+        font-size: 1.1rem;
+    }
+}
